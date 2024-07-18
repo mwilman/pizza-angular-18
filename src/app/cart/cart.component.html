@@ -13,10 +13,10 @@
           <div class="single-product-wrapper p-card">
             <div class="flex-row space-around">
               <div>
-                <span>{{ 3 }}</span>
+                <span>{{ quantity }}</span>
               </div>
               <div>
-                <span>{{ product.description }}</span>
+                <span class="text-underline">{{ product.description }}</span>
               </div>
               <div>
                 <span>{{ 20.49 | currency }}</span>
@@ -27,16 +27,16 @@
             </div>
             <div class="flex-row button-group-quantity">
               <button pButton type="button" icon="pi pi-plus" (click)="add(product)"></button>
-              <span>3</span>
+              <span>{{quantity}}</span>
               <button pButton type="button" icon="pi pi-minus" (click)="remove(product)"></button>
             </div>
           </div>
         }
       </div>
-      <div class="flex-row justify-content-end">
+      <div id="total">
         <span>Total: {{ total() }}</span>
       </div>
-      <div class="flex-row justify-content-end">
+      <div id="order-wrapper">
         <button pButton type="button" label="Order" (click)="order()"></button>
       </div>
     </div>

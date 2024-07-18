@@ -24,14 +24,27 @@ import {CurrencyPipe} from "@angular/common";
 export class CartComponent {
   productService = inject(ProductService);
   cart = this.productService.loadedCart();
+  quantity = 3;
 
-  remove(product: Product) {
+  removeProduct(product: Product) {
     console.log('Product deleted from cart: ', product);
     this.productService.deleteFromCart(product);
+    this.quantity--; //todo: fix this
+  }
+
+  addProduct(product: Product) {
+    this.productService.addToCart(product);
   }
 
   add(product: Product) {
-    this.productService.addToCart(product);
+    this.quantity++;
+  }
+
+  remove(product: Product) {
+    this.quantity--;
+    if (this.quantity === 0) {
+      this.removeProduct(product);
+    }
   }
 
   total() {
