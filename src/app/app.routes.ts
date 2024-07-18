@@ -13,5 +13,5 @@ export const routes: Routes = [
   // {path: 'imprint', component: ImprintComponent},
   // {path: 'contact', component: ContactComponent},
   {path: 'cart', component: CartComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', redirectTo: 'pizza', pathMatch: 'full'},
 ];
