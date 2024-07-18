@@ -5,7 +5,7 @@
 <!--        @for (column of columns; track $index) {-->
 <!--          <th>{{ column.header }}</th>-->
 <!--        }-->
-        <th>Code</th>
+        <th>#</th>
         <th>Name</th>
         <th>Category</th>
         <th style="width: 5rem"></th>
@@ -18,7 +18,7 @@
 <!--        }-->
         <td>{{ product.identifier }}</td>
         <td>{{ product.description }}</td>
-        <td>{{ product.price }}</td>
+        <td>{{ product.price | currency }}</td>
         <td>
           <button pButton type="button" icon="pi pi-shopping-cart" (click)="addToCart(product)"></button>
         </td>

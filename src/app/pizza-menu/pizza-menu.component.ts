@@ -4,13 +4,15 @@ import { products } from '../products/products';
 import {TableModule} from "primeng/table";
 import {ButtonDirective} from "primeng/button";
 import {ProductService} from "../product.service";
+import {CurrencyPipe} from "@angular/common";
 
 @Component({
   selector: 'app-pizza-menu',
   standalone: true,
   imports: [
     TableModule,
-    ButtonDirective
+    ButtonDirective,
+    CurrencyPipe
   ],
   templateUrl: './pizza-menu.component.html',
   styleUrl: './pizza-menu.component.scss'
