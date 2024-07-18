@@ -5,11 +5,11 @@
   height: 100%;
   display: grid;
   grid-template-rows: 60px auto 60px;
-  grid-template-columns: 15% auto 15%;
+  grid-template-columns: 15% auto 30%;
   gap: 0 0;
   grid-template-areas:
     "header header header"
-    ". content sidebar"
+    "content content sidebar"
     "footer footer footer";
   justify-content: stretch;
   align-items: stretch;
@@ -19,6 +19,7 @@
   grid-area: content;
   min-height: 1000px;
   padding: 20px 0;
+  margin: 0 10px
 }
 
 app-header {

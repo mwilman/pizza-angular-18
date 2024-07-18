@@ -1,3 +1,33 @@
 <div class="p-card">
-  <span>cart works!</span>
+  <div class="headline">
+    <span>Order Overview</span>
+  </div>
+  @if (cart().length === 0) {
+    <p>No items in the cart</p>
+  } @else {
+    <div>
+      <div class="flex-row">
+        <div class="flex-column">
+          <span>Item</span>
+        </div>
+        <div class="flex-column">
+          <span>Price</span>
+        </div>
+        <div class="flex-column">
+          <span>Quantity</span>
+        </div>
+        <div class="flex-column">
+          <span>Subtotal</span>
+        </div>
+        <div>
+          <div class="flex-row justify-content-end">
+            <span>Total: {{ total() }}</span>
+          </div>
+          <div class="flex-row justify-content-end">
+            <button pButton type="button" label="Order" (click)="order()"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
 </div>

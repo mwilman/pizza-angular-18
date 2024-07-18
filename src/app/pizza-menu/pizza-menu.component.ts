@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {Product} from "../products/product";
 import { products } from '../products/products';
 import {TableModule} from "primeng/table";
 import {ButtonDirective} from "primeng/button";
+import {ProductService} from "../product.service";
 
 @Component({
   selector: 'app-pizza-menu',
@@ -15,27 +16,12 @@ import {ButtonDirective} from "primeng/button";
   styleUrl: './pizza-menu.component.scss'
 })
 export class PizzaMenuComponent {
-  //example of product
-  /*
-    {
-    identifier: '1',
-    description: 'Pizza Margherita',
-    price: 4.50,
-    type: 'pizza'
-  },
-   */
+  productService = inject(ProductService);
 
-  //get the pizza menu
   products: Product[] = products.filter(product => product.type === 'pizza');
 
-  //columns for the table
-  cols = [
-    {field: 'identifier', header: 'ID'},
-    {field: 'description', header: 'Description'},
-    {field: 'price', header: 'Price'}
-  ];
-
-  addToCart(product: any) {
-
+  addToCart(product: Product) {
+    console.log('Product added to cart: ', product);
+    this.productService.addToCart(product);
   }
 }
