@@ -6,3 +6,19 @@
 body {
   margin: 0
 }
+
+div {
+  display: unset;
+}
+
+.flex {
+  display: flex;
+
+  .flex-column {
+    flex-direction: column;
+  }
+
+  .flex-row {
+    flex-direction: row;
+  }
+}

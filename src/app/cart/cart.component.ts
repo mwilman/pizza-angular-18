@@ -5,6 +5,8 @@ import {PrimeTemplate} from "primeng/api";
 import {TableModule} from "primeng/table";
 import {Product} from "../products/product";
 import {CardModule} from "primeng/card";
+import {products} from "../products/products";
+import {CurrencyPipe} from "@angular/common";
 
 @Component({
   selector: 'app-cart',
@@ -13,7 +15,8 @@ import {CardModule} from "primeng/card";
     ButtonDirective,
     PrimeTemplate,
     TableModule,
-    CardModule
+    CardModule,
+    CurrencyPipe
   ],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
