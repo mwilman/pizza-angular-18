@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import {Product} from "../products/product";
 import { products } from '../products/products';
 import {TableModule} from "primeng/table";
+import {ButtonDirective} from "primeng/button";
 
 @Component({
   selector: 'app-pizza-menu',
   standalone: true,
   imports: [
-    TableModule
+    TableModule,
+    ButtonDirective
   ],
   templateUrl: './pizza-menu.component.html',
   styleUrl: './pizza-menu.component.scss'
@@ -33,4 +35,7 @@ export class PizzaMenuComponent {
     {field: 'price', header: 'Price'}
   ];
 
+  addToCart(product: any) {
+
+  }
 }
