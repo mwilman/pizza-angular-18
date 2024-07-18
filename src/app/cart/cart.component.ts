@@ -25,9 +25,13 @@ export class CartComponent {
   productService = inject(ProductService);
   cart = this.productService.loadedCart();
 
-  deleteProduct(product: Product) {
+  remove(product: Product) {
     console.log('Product deleted from cart: ', product);
     this.productService.deleteFromCart(product);
+  }
+
+  add(product: Product) {
+    this.productService.addToCart(product);
   }
 
   total() {

@@ -8,3 +8,24 @@
   font-size: 1.5em;
   font-weight: bold;
 }
+
+#products-wrapper {
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+
+  .single-product-wrapper {
+    > div {
+      padding: 20px 0;
+    }
+
+    .description {
+    }
+
+    .button-group-quantity {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+  }
+}

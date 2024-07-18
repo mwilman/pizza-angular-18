@@ -2,23 +2,29 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
+@import "normalize.css" layer(normalize-reset);
 
-body {
-  margin: 0
-}
+@layer normalize, primeng;
 
-div {
-  display: unset;
-}
-
-.flex {
+.flex-column {
   display: flex;
+  flex-direction: column;
+}
 
-  .flex-column {
+.flex-row {
+  display: flex;
+  flex-direction: row;
+
+  > div {
+    display: flex;
     flex-direction: column;
   }
+}
 
-  .flex-row {
-    flex-direction: row;
-  }
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
 }

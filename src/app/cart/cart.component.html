@@ -7,22 +7,32 @@
   }
 
   @if (cart().length > 0) {
-    <div>
-      @for (product of cart(); track product.identifier) {
-        <div class="flex">
-          <div class="flex-row">
-            <div class="flex-column">
-              <span>{{ 3 }}</span>
+    <div id="cart-content">
+      <div id="products-wrapper">
+        @for (product of cart(); track product.identifier) {
+          <div class="single-product-wrapper p-card">
+            <div class="flex-row space-around">
+              <div>
+                <span>{{ 3 }}</span>
+              </div>
+              <div>
+                <span>{{ product.description }}</span>
+              </div>
+              <div>
+                <span>{{ 20.49 | currency }}</span>
+              </div>
             </div>
-            <div class="flex-column">
-              <span>{{ product.description }}</span>
+            <div class="description">
+              <span>aolöskdakslpjdlkasjdlkasjdlasjdlasdjkl</span>
             </div>
-            <div class="flex-column">
-              <span>{{20.49 | currency}}</span>
+            <div class="flex-row button-group-quantity">
+              <button pButton type="button" icon="pi pi-plus" (click)="add(product)"></button>
+              <span>3</span>
+              <button pButton type="button" icon="pi pi-minus" (click)="remove(product)"></button>
             </div>
           </div>
-        </div>
-      }
+        }
+      </div>
       <div class="flex-row justify-content-end">
         <span>Total: {{ total() }}</span>
       </div>
