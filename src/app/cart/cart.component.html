@@ -26,9 +26,9 @@
               <span>mit Käse überbacken</span>
             </div>
             <div class="flex-row button-group-quantity">
-              <p-button icon="pi pi-plus" (click)="add(product)" rounded></p-button>
-              <span>{{quantity}}</span>
               <p-button icon="pi pi-minus" (click)="remove(product)" rounded></p-button>
+              <span>{{quantity}}</span>
+              <p-button icon="pi pi-plus" (click)="add(product)" rounded></p-button>
             </div>
           </div>
           @if (!last) {
