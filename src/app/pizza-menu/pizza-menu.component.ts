@@ -3,7 +3,7 @@ import {Product} from "../products/product";
 import { products } from '../products/products';
 import {TableModule} from "primeng/table";
 import {ButtonDirective} from "primeng/button";
-import {ProductService} from "../product.service";
+import {ProductService} from "../products/service/product.service";
 import {CurrencyPipe} from "@angular/common";
 
 @Component({

@@ -12,23 +12,23 @@
         @for (product of cart(); track product.identifier; let last = $last) {
           <div class="single-product-wrapper">
             <div class="flex-row space-around">
-              <div>
-                <span>{{ quantity }}</span>
+              <div class="quantity">
+                <span>{{ product.quantity }}</span>
               </div>
-              <div>
+              <div class="name">
                 <span class="text-underline">{{ product.description }}</span>
               </div>
-              <div>
-                <span>{{ 20.49 | currency:'EUR'}}</span>
+              <div class="total">
+                <span>{{ product.total | currency:'EUR' }}</span>
               </div>
             </div>
             <div class="description">
               <span>mit Käse überbacken</span>
             </div>
             <div class="flex-row button-group-quantity">
-              <p-button icon="pi pi-minus" (click)="remove(product)" rounded></p-button>
-              <span>{{quantity}}</span>
-              <p-button icon="pi pi-plus" (click)="add(product)" rounded></p-button>
+              <p-button icon="pi pi-minus" (click)="removeProduct(product)" rounded></p-button>
+              <span>{{ product.quantity }}</span>
+              <p-button icon="pi pi-plus" (click)="addProduct(product)" rounded></p-button>
             </div>
           </div>
           @if (!last) {
@@ -37,7 +37,7 @@
         }
       </div>
       <div id="total">
-        <span>Total: {{ total() }}</span>
+        <span>Total: {{ total() | currency: 'EUR' }}</span>
       </div>
       <div id="order-wrapper">
         <p-button class="w-100" styleClass="w-100" type="button" label="Order" (click)="order()"></p-button>

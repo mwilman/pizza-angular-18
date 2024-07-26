@@ -22,7 +22,16 @@
       padding: 20px 0;
     }
 
-    .description {
+    .quantity {
+      min-width: 2ch;
+    }
+
+    .name {
+      min-width: 20ch;
+    }
+
+    .total {
+      min-width: 6ch;
     }
 
     .button-group-quantity {
