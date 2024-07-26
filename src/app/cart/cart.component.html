@@ -9,8 +9,8 @@
   @if (cart().length > 0) {
     <div id="cart-content">
       <div id="products-wrapper">
-        @for (product of cart(); track product.identifier) {
-          <div class="single-product-wrapper p-card">
+        @for (product of cart(); track product.identifier; let last = $last) {
+          <div class="single-product-wrapper">
             <div class="flex-row space-around">
               <div>
                 <span>{{ quantity }}</span>
@@ -26,18 +26,21 @@
               <span>mit Käse überbacken</span>
             </div>
             <div class="flex-row button-group-quantity">
-              <button pButton type="button" icon="pi pi-plus" (click)="add(product)"></button>
+              <p-button icon="pi pi-plus" (click)="add(product)" rounded></p-button>
               <span>{{quantity}}</span>
-              <button pButton type="button" icon="pi pi-minus" (click)="remove(product)"></button>
+              <p-button icon="pi pi-minus" (click)="remove(product)" rounded></p-button>
             </div>
           </div>
+          @if (!last) {
+            <p-divider></p-divider>
+          }
         }
       </div>
       <div id="total">
         <span>Total: {{ total() }}</span>
       </div>
       <div id="order-wrapper">
-        <button pButton type="button" label="Order" (click)="order()"></button>
+        <p-button class="w-100" styleClass="w-100" type="button" label="Order" (click)="order()"></p-button>
       </div>
     </div>
   }

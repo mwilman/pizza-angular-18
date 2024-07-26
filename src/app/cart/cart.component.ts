@@ -1,12 +1,12 @@
 import {Component, inject} from '@angular/core';
 import {ProductService} from "../product.service";
-import {ButtonDirective} from "primeng/button";
+import {Button, ButtonDirective} from "primeng/button";
 import {PrimeTemplate} from "primeng/api";
 import {TableModule} from "primeng/table";
 import {Product} from "../products/product";
 import {CardModule} from "primeng/card";
-import {products} from "../products/products";
 import {CurrencyPipe} from "@angular/common";
+import {DividerModule} from "primeng/divider";
 
 @Component({
   selector: 'app-cart',
@@ -16,7 +16,9 @@ import {CurrencyPipe} from "@angular/common";
     PrimeTemplate,
     TableModule,
     CardModule,
-    CurrencyPipe
+    CurrencyPipe,
+    DividerModule,
+    Button
   ],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
