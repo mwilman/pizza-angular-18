@@ -18,7 +18,7 @@
 <!--        }-->
         <td>{{ product.identifier }}</td>
         <td>{{ product.description }}</td>
-        <td>{{ product.price | currency }}</td>
+        <td>{{ product.price | currency:'EUR' }}</td>
         <td>
           <button pButton type="button" icon="pi pi-shopping-cart" (click)="addToCart(product)"></button>
         </td>
