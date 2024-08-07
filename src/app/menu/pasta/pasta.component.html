@@ -1,0 +1,8 @@
+<div class="">
+  <div class="headline">
+    <span>Beliebt </span><i class="pi pi-heart-fill"></i>
+  </div>
+  @for (product of products; track $index) {
+    <app-menu-item [product]="product"></app-menu-item>
+  }
+</div>
