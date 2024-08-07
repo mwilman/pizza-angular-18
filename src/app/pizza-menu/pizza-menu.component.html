@@ -3,7 +3,7 @@
     <span>Beliebt </span><i class="pi pi-heart-fill"></i>
   </div>
   @for (product of products; track $index) {
-    <div class="product-wrapper p-card">
+    <div (click)="addToCart(product)" class="product-wrapper p-card">
       <div class="p-grid">
         <div class="p-col">
           <div class="headline">
