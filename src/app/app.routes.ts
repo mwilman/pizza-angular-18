@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import {PizzaMenuComponent} from "./pizza-menu/pizza-menu.component";
+import {PizzaMenuComponent} from "./menu/pizza/pizza-menu.component";
 import {CartComponent} from "./cart/cart.component";
 import {LandingPageComponent} from "./landing-page/landing-page.component";
 
