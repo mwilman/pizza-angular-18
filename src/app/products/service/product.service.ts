@@ -24,7 +24,7 @@ export class ProductService {
 
   addToCart(product: Product) {
     this.cart.update(products => {
-      const existing = products.find(p => p === product)
+      const existing = products.find(p => p.identifier === product.identifier)
       if (existing) {
         existing.quantity++
         existing.total = existing.price * existing.quantity
@@ -39,7 +39,7 @@ export class ProductService {
 
   deleteFromCart(product: Product) {
     this.cart.update(products => {
-      const existing = products.find(p => p === product)
+      const existing = products.find(p => p.identifier === product.identifier)
       if (existing) {
         existing.quantity--
         existing.total = existing.price * existing.quantity
