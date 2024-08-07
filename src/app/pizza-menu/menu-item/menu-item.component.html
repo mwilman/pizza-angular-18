@@ -1,0 +1,19 @@
+<div (click)="addToCart(product)" class="product-wrapper p-card">
+  <div class="p-grid">
+    <div class="p-col">
+      <div class="headline">
+        <span>{{ product.description }}</span>
+      </div>
+      <div class="description">
+        <span>mit Käse überbacken</span>
+      </div>
+      <div class="price">
+        <span>{{ product.price | currency:'EUR' }}</span>
+      </div>
+    </div>
+    <div class="p-col">
+      <button rounded text raised pButton type="button" size="small" icon="pi pi-plus"
+              (click)="addToCart(product)"></button>
+    </div>
+  </div>
+</div>
